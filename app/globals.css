@@ -43,6 +43,42 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 1s ease-out forwards;
+}
+
+.course-shape {
+  clip-path: path("M40 0 H760 A40 40 0 0 1 800 40 V320 A40 40 0 0 1 760 360 H460 C420 360 420 420 380 420 H200 A40 40 0 0 1 160 380 V360 H40 A40 40 0 0 1 0 320 V40 A40 40 0 0 1 40 0 Z");
+}
+
+.contact-clip {
+  clip-path: path("M40,0 H88% C96% 0,100% 12%,100% 24% V76% C100% 88%,96% 100%,88% 100% H40 C16% 100%,0 82%,0 58% V42 C0 18%,16% 0,40 0 Z" );
+}
+
+/* long connector line */
+.line-extend::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: 6px;
+  width: 80px;
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+}
+
+
+
 @theme {
   --animate-blob: blob 7s infinite;
 

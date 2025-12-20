@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
+import LetsTalkButton from "./LetsTalkButton";
 
 export default function Navbar({ isOpen, setIsOpen }) {
     // const [isOpen, setIsOpen] = useState(false); // Removed local state
@@ -12,28 +13,34 @@ export default function Navbar({ isOpen, setIsOpen }) {
         <nav className="fixed top-0 left-0 w-full z-50 bg-[#0f0f13] border-b border-white/10">
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
                 <Link href="/" className="flex items-center gap-2">
-                    <div className="w-10 h-10 relative">
+                    <div className="w-30 h-10 relative">
                         <Image
-                            src="/Skill Kit.svg"
-                            alt="Skill Kit Logo"
+                            src="/lOGO_new.png"
+                            alt="Skill Kit"
                             fill
-                            className="object-contain"
+                            className="object-contain bg-white-800"
                         />
                     </div>
-                    <span className="text-xl font-bold tracking-wide">Skill Kit</span>
+                    <span className="text-xl font-bold tracking-wide"></span>
                 </Link>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex gap-8 text-sm font-medium text-gray-300">
-                    <Link href="#" className="hover:text-amber-400 transition-colors">Home</Link>
-                    <Link href="#about" className="hover:text-amber-400 transition-colors">About Us</Link>
-                    <Link href="#courses" className="hover:text-amber-400 transition-colors">Courses</Link>
-                    <Link href="#contact" className="hover:text-amber-400 transition-colors">Contact</Link>
+                <div className="hidden md:flex gap-6 md:gap-10 lg:gap-14 text-sm font-medium text-gray-300">
+                    <Link href="#" className="hover:text-amber-400 transition-colors relative inline-block hover:text-amber-400 transition-all duration-300 hover:scale-110 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-amber-400 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">Home</Link>
+                    <Link href="#about" className="hover:text-amber-400 transition-colors relative inline-block hover:text-amber-400 transition-all duration-300 hover:scale-110 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-amber-400 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">About Us</Link>
+                    <Link href="#courses" className="hover:text-amber-400 transition-colors relative inline-block hover:text-amber-400 transition-all duration-300 hover:scale-110 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-amber-400 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">Courses</Link>
+                    <Link href="#contact" className="hover:text-amber-400 transition-colors relative inline-block hover:text-amber-400 transition-all duration-300 hover:scale-110 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-amber-400 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full">Contact</Link>
                 </div>
 
-                <Link href="#contact" className="hidden md:block px-6 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 transition-all text-sm font-semibold backdrop-blur-md">
-                    Join Now
-                </Link>
+
+                <LetsTalkButton />
+
+
+
+
+
+
+
 
                 {/* Mobile Menu Button */}
                 <button
@@ -62,7 +69,7 @@ export default function Navbar({ isOpen, setIsOpen }) {
 
                     <div className="mt-auto">
                         <Link href="#contact" onClick={() => setIsOpen(false)} className="block w-full text-center px-6 py-3 rounded-full bg-amber-400 text-black hover:bg-amber-300 transition-all text-sm font-bold">
-                            Join Now
+                            😄 Join Now
                         </Link>
                     </div>
                 </div>
