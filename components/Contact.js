@@ -94,9 +94,9 @@ export default function ContactFooter({ isSidebarOpen = false }) {
                                 </li>
                                 <li>
                                     <span className="block text-white">Address</span>
-                                    612 Westgate 2, near Ayodhya chowk,<br />
-                                    BRTS stop, 150 Feet Ring Rd, Rajkot,<br />
-                                    Gujarat 360006
+                                    304,Jyoti complex Mavdi Main Road,,<br />
+                                    Sri nath society,Uday Nagar,<br />
+                                    Rajkot Gujarat 360004
                                 </li>
                             </ul>
                         </div>

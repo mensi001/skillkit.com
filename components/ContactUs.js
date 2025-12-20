@@ -1,14 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import {
-    Mail,
-    User,
-    Phone,
-    MessageSquare,
-    FileText
-} from 'lucide-react';
-
+import { Mail, User, Phone, MessageSquare, FileText } from 'lucide-react';
 
 export default function ContactUs() {
     const [form, setForm] = useState({
@@ -24,7 +17,6 @@ export default function ContactUs() {
     const [error, setError] = useState('');
 
     const handleChange = (e) => {
-        console.log('CHANGE:', e.target.name, e.target.value);
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
@@ -42,7 +34,6 @@ export default function ContactUs() {
             });
 
             const data = await res.json();
-
             if (!res.ok) throw new Error(data.error);
 
             setSuccess(true);
@@ -60,168 +51,142 @@ export default function ContactUs() {
         }
     };
 
-
-
     return (
-        <section className="relative w-full bg-[#0f0f13] py-20 px-4" id="contact">
-            <div className="mx-auto max-w-7xl">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <section className="bg-[#0f0f13] py-14 md:py-20 px-4" id="contact">
+            <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10">
 
-                    {/* ================= MAP ================= */}
-                    <div className="relative overflow-hidden rounded-3xl border border-white/10">
-                        <iframe
-                            title="Google Map - Rajkot"
-                            src="https://www.google.com/maps?q=612%20Westgate%202,%20near%20Ayodhya%20chowk,%20150%20Feet%20Ring%20Rd,%20Rajkot,%20Gujarat%20360006&z=16&output=embed"
-                            className="h-[520px] w-full grayscale contrast-125 brightness-75"
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                        />
-                    </div>
+                {/* MAP */}
+                <div className="rounded-2xl overflow-hidden border border-white/10">
+                    <iframe
+                        title="Google Map - Rajkot"
+                        src="https://www.google.com/maps?q=612%20Westgate%202,%20near%20Ayodhya%20chowk,%20150%20Feet%20Ring%20Rd,%20Rajkot,%20Gujarat%20360006&z=16&output=embed"
+                        className="h-[260px] sm:h-[320px] md:h-[520px] w-full grayscale contrast-125 brightness-75"
+                        loading="lazy"
+                    />
+                </div>
 
+                {/* FORM */}
+                <form onSubmit={handleSubmit} className="relative">
+                    <div className="
+                        relative
+                        rounded-2xl
+                        border border-white/10
+                        bg-white/5
+                        backdrop-blur-xl
+                        p-6
+                        sm:p-8
+                        md:rounded-none md:p-0 md:border-none md:bg-transparent md:backdrop-blur-0
+                    ">
 
+                        {/* DESKTOP GLASS */}
+                        <div className="hidden md:block contact-clip absolute inset-0 border border-white/10 bg-white/5 backdrop-blur-xl" />
 
-                    {/* ================= FORM ================= */}
-                    <form onSubmit={handleSubmit} className="relative">
+                        <div className="relative md:px-12 md:py-14">
 
-
-                        {/* Glass Capsule */}
-                        <div className="contact-clip relative border border-white/10 bg-white/5 backdrop-blur-xl px-12 py-14">
-
-                            {/* Background Overlay (people silhouette feel) */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a]/90 to-transparent pointer-events-none" />
-
-                            <h2 className="relative text-3xl font-semibold text-white mb-14">
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-6 md:mb-14">
                                 Ready to Get Started?
                             </h2>
 
-                            {/* ✅ SUCCESS / ERROR MESSAGE */}
                             {success && (
-                                <div className="mb-8 rounded-lg border border-green-500/30 bg-green-500/10 px-4 py-3 text-green-400 text-sm">
-                                    ✅ Your message has been sent successfully!
+                                <div className="mb-5 rounded-md border border-green-500/30 bg-green-500/10 px-4 py-2 text-green-400 text-sm">
+                                    ✅ Message sent successfully!
                                 </div>
                             )}
 
                             {error && (
-                                <div className="mb-8 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-red-400 text-sm">
+                                <div className="mb-5 rounded-md border border-red-500/30 bg-red-500/10 px-4 py-2 text-red-400 text-sm">
                                     ❌ {error}
                                 </div>
                             )}
 
-                            {/* Row 1 */}
-                            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-14 mb-12">
-                                <LineInput icon={<User size={18} />} placeholder="YOUR NAME" name="name" value={form.name} onChange={handleChange} />
-                                <LineInput icon={<Mail size={18} />} placeholder="YOUR EMAIL ADDRESS" name="email" value={form.email} onChange={handleChange} />
+                            {/* INPUTS */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-14">
+                                <Input name="name" value={form.name} onChange={handleChange} icon={<User size={16} />} placeholder="Your Name" />
+                                <Input name="email" value={form.email} onChange={handleChange} icon={<Mail size={16} />} placeholder="Email Address" />
+                                <Input name="phone" value={form.phone} onChange={handleChange} icon={<Phone size={16} />} placeholder="Phone Number" />
+                                <Input name="subject" value={form.subject} onChange={handleChange} icon={<FileText size={16} />} placeholder="Subject" />
                             </div>
 
-                            {/* Row 2 */}
-                            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-14 mb-12">
-                                <LineInput icon={<Phone size={18} />} placeholder="YOUR PHONE NUMBER" name="phone" value={form.phone} onChange={handleChange} />
-                                <LineInput icon={<FileText size={18} />} placeholder="YOUR SUBJECT" name="subject" value={form.subject} onChange={handleChange} />
-                            </div>
-
-                            {/* Message */}
-                            <div className="relative mb-16">
-                                <LineTextarea
-                                    icon={<MessageSquare size={18} />}
-                                    placeholder="YOUR MESSAGE"
+                            <div className="mt-4 md:mt-16">
+                                <Textarea
                                     name="message"
                                     value={form.message}
                                     onChange={handleChange}
+                                    icon={<MessageSquare size={16} />}
+                                    placeholder="Your Message"
                                 />
                             </div>
 
-                            {/* Button */}
-                            <div className="relative flex justify-center">
+                            <div className="mt-6 md:mt-16 flex justify-center">
                                 <button
                                     type="submit"
                                     disabled={loading}
-                                    className="rounded-full border border-white/30 px-12 py-3 text-white hover:bg-white hover:text-black transition disabled:opacity-50"
+                                    className="w-full md:w-auto rounded-full border border-white/30 px-10 py-3 text-white hover:bg-white hover:text-black transition disabled:opacity-50"
                                 >
-                                    {loading ? 'Sending...' : 'Send Now'}
+                                    {loading ? 'Sending...' : 'Send Message'}
                                 </button>
-
                             </div>
 
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </section>
     );
 }
 
-/* ================= LINE INPUT ================= */
-function LineInput({ icon, placeholder, name, value, onChange }) {
+/* ===== MOBILE-FRIENDLY INPUT ===== */
+function Input({ icon, ...props }) {
     return (
         <div className="relative">
-            <div className="absolute -left-1 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-white">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-white/70 md:hidden">
                 {icon}
-            </div>
+            </span>
 
             <input
-                type="text"
-                name={name}
-                value={value}
-                onChange={onChange}
-                placeholder={placeholder}
+                {...props}
                 className="
-                  w-full
-                  bg-transparent
-                  pl-14
-                  pb-2
-                  text-sm
-                  text-white
-                  placeholder-white/70
-                  outline-none
-                  border-b
-                  border-white/30
-                  focus:border-cyan-400
-                  transition
+                    w-full
+                    rounded-lg
+                    bg-white/10
+                    px-10 py-3
+                    text-sm text-white
+                    placeholder-white/60
+                    outline-none
+                    focus:ring-2 focus:ring-cyan-400/50
+                    md:bg-transparent md:px-0 md:py-0 md:rounded-none
+                    md:border-b md:border-white/30 md:focus:ring-0
                 "
             />
-
-            <span className="absolute -right-1 bottom-[6px] h-1.5 w-1.5 rounded-full bg-white/70"></span>
         </div>
     );
 }
 
-
-
-/* ================= LINE TEXTAREA ================= */
-function LineTextarea({ icon, placeholder, name, value, onChange }) {
+/* ===== MOBILE-FRIENDLY TEXTAREA ===== */
+function Textarea({ icon, ...props }) {
     return (
         <div className="relative">
-            {/* Icon Circle */}
-            <div className="absolute -left-1 top-1 flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-white">
+            <span className="absolute left-3 top-4 text-white/70 md:hidden">
                 {icon}
-            </div>
+            </span>
 
-            {/* Textarea */}
             <textarea
-                rows={3}
-                name={name}
-                value={value}
-                onChange={onChange}
-                placeholder={placeholder}
+                rows={4}
+                {...props}
                 className="
-                  w-full
-                  bg-transparent
-                  pl-14
-                  pb-2
-                  text-sm
-                  text-white
-                  placeholder-white/70
-                  outline-none
-                  border-b
-                  border-white/30
-                  focus:border-cyan-400
-                  resize-none
-                  transition
+                    w-full
+                    rounded-lg
+                    bg-white/10
+                    px-10 py-3
+                    text-sm text-white
+                    placeholder-white/60
+                    outline-none
+                    resize-none
+                    focus:ring-2 focus:ring-cyan-400/50
+                    md:bg-transparent md:px-0 md:py-0 md:rounded-none
+                    md:border-b md:border-white/30 md:focus:ring-0
                 "
             />
-
-            {/* End Dot */}
-            <span className="absolute -right-1 bottom-[6px] h-1.5 w-1.5 rounded-full bg-white/70"></span>
         </div>
     );
 }
