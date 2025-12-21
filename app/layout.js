@@ -1,9 +1,10 @@
 import "./globals.css";
 import { Outfit } from "next/font/google";
+
 import Background from "../components/Background";
 import CursorFollower from "../components/CursorFollower";
-
-
+import Footer from "../components/Contact";
+import Navbar from "../components/Navbar";
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
@@ -16,14 +17,24 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={outfit.className}>
-                {/* Background Effects */}
+
+                {/* Global Background */}
                 <Background />
 
-                {/* Cursor Animation */}
+                {/* Navbar */}
+                <Navbar />
+
+                {/* Cursor */}
                 <CursorFollower />
 
-                {/* App Content */}
-                {children}
+                {/* Page Content */}
+                <main className="relative z-10 min-h-screen pt-20">
+                    {children}
+                </main>
+
+                {/* Footer */}
+                <Footer />
+
             </body>
         </html>
     );

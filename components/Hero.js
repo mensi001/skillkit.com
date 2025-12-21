@@ -104,7 +104,7 @@ export default function Hero() {
 
       {/* Side Text */}
       <div className="hidden lg:block absolute left-10 top-1/2 -rotate-90 text-[10px] tracking-[0.5em] uppercase text-white/30">
-        Creative Intelligence Agency // 2024
+        Creative Intelligence Agency
       </div>
     </section>
   );

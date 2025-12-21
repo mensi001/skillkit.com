@@ -1,22 +1,21 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import LetsTalkButton from "./LetsTalkButton";
 
-export default function Navbar({
-    isOpen,
-    setIsOpen,
-    onCoursesClick,
-    onHomeClick
-}) {
+export default function Navbar({ isOpen, setIsOpen }) {
+    const router = useRouter();
+
     return (
         <nav className="fixed top-0 left-0 w-full z-50 bg-[#0f0f13] border-b border-white/10">
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
 
                 {/* LOGO */}
                 <button
-                    onClick={onHomeClick}
+                    onClick={() => router.push('/')}
                     className="flex items-center gap-2"
                 >
                     <div className="w-32 h-10 relative">
@@ -29,41 +28,29 @@ export default function Navbar({
                     </div>
                 </button>
 
-                {/* ================= DESKTOP MENU ================= */}
+                {/* DESKTOP MENU */}
                 <div className="hidden md:flex gap-10 text-sm font-medium text-gray-300">
 
-                    <button
-                        onClick={onHomeClick}
-                        className="hover:text-amber-400 transition-all"
-                    >
+                    <Link href="/" className="hover:text-amber-400">
                         Home
-                    </button>
+                    </Link>
 
-                    <a
-                        href="#about"
-                        className="hover:text-amber-400 transition-all"
-                    >
+                    <Link href="/#about" className="hover:text-amber-400">
                         About Us
-                    </a>
+                    </Link>
 
-                    <button
-                        onClick={onCoursesClick}
-                        className="hover:text-amber-400 transition-all"
-                    >
+                    <Link href="/#courses" className="hover:text-amber-400">
                         Courses
-                    </button>
+                    </Link>
 
-                    <a
-                        href="#contact"
-                        className="hover:text-amber-400 transition-all"
-                    >
+                    <Link href="/#contact" className="hover:text-amber-400">
                         Contact
-                    </a>
+                    </Link>
                 </div>
 
                 <LetsTalkButton />
 
-                {/* ================= MOBILE MENU BUTTON ================= */}
+                {/* MOBILE MENU BUTTON */}
                 <button
                     className="md:hidden text-white p-2"
                     onClick={() => setIsOpen(!isOpen)}
@@ -72,11 +59,11 @@ export default function Navbar({
                 </button>
             </div>
 
-            {/* ================= MOBILE SIDEBAR ================= */}
+            {/* MOBILE SIDEBAR */}
             <div
                 className={`fixed top-0 right-0 h-full w-64 bg-[#1a1a1f]
-                transform transition-transform duration-300 z-50
-                ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        transform transition-transform duration-300 z-50
+        ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
             >
                 <div className="p-6 flex flex-col h-full">
 
@@ -88,46 +75,26 @@ export default function Navbar({
 
                     <div className="flex flex-col gap-6 text-lg text-gray-300">
 
-                        <button
-                            onClick={() => {
-                                setIsOpen(false);
-                                onHomeClick();
-                            }}
-                            className="text-left hover:text-amber-400"
-                        >
+                        <Link href="/" onClick={() => setIsOpen(false)}>
                             Home
-                        </button>
+                        </Link>
 
-                        <a
-                            href="#about"
-                            onClick={() => setIsOpen(false)}
-                            className="hover:text-amber-400"
-                        >
+                        <Link href="/#about" onClick={() => setIsOpen(false)}>
                             About Us
-                        </a>
+                        </Link>
 
-                        <button
-                            onClick={() => {
-                                setIsOpen(false);
-                                onCoursesClick();
-                            }}
-                            className="text-left hover:text-amber-400"
-                        >
+                        <Link href="/#courses" onClick={() => setIsOpen(false)}>
                             Courses
-                        </button>
+                        </Link>
 
-                        <a
-                            href="#contact"
-                            onClick={() => setIsOpen(false)}
-                            className="hover:text-amber-400"
-                        >
+                        <Link href="/#contact" onClick={() => setIsOpen(false)}>
                             Contact
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
 
-            {/* ================= OVERLAY ================= */}
+            {/* OVERLAY */}
             {isOpen && (
                 <div
                     className="fixed inset-0 bg-black/50 z-40 md:hidden"
@@ -136,5 +103,4 @@ export default function Navbar({
             )}
         </nav>
     );
-
 }

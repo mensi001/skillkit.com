@@ -27,7 +27,7 @@ export default function WhyChooseUs() {
                                 ring-6 md:ring-8 ring-cyan-400/60
                                 shadow-2xl shadow-cyan-500/30">
                                 <Image
-                                    src="/skillkit_about.webp"
+                                    src="/classes(2).jpg"
                                     alt="Alumni workshop and support"
                                     fill
                                     className="object-cover"
@@ -35,11 +35,12 @@ export default function WhyChooseUs() {
                             </div>
                             <div className="max-w-sm">
                                 <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4">
-                                    Ongoing Alumni Support
+                                    UI/UX Design with Real Industry Workflow
                                 </h3>
                                 <p className="text-gray-300 text-base sm:text-lg">
-                                    Our alumni network provides continued support, new workshops, and industry updates to keep your skills sharp.
+                                    Learn UI/UX design the way professionals work — from user research and wireframing to high-fidelity designs and real project execution.
                                 </p>
+
                             </div>
                         </div>
 
@@ -53,7 +54,7 @@ export default function WhyChooseUs() {
                                 ring-6 md:ring-8 ring-cyan-400/60
                                 shadow-2xl shadow-cyan-500/30">
                                 <Image
-                                    src="/skillkit_about.webp"
+                                    src="/classes(1).jpg"
                                     alt="Flexible online/part-time learning"
                                     fill
                                     className="object-cover"
@@ -61,11 +62,12 @@ export default function WhyChooseUs() {
                             </div>
                             <div className="max-w-sm">
                                 <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4">
-                                    Flexible Learning Options
+                                    Photoshop with AI-Powered Practice
                                 </h3>
                                 <p className="text-gray-300 text-base sm:text-lg">
-                                    Choose from full-time, part-time, or online courses to fit your schedule.
+                                    Master Photoshop using modern AI tools, smart workflows, and creative techniques used by today’s designers and content creators.
                                 </p>
+
                             </div>
                         </div>
                     </div>
@@ -91,11 +93,12 @@ export default function WhyChooseUs() {
                             </div>
                             <div className="max-w-sm">
                                 <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4">
-                                    Networking & Industry Exposure
+                                    Professional Video Editing Training
                                 </h3>
                                 <p className="text-gray-300 text-base sm:text-lg">
-                                    Gain valuable connections through workshops, webinars, and design conferences with industry experts.
+                                    Learn cinematic editing, reels, ads, and social media content creation with professional tools and real-world editing processes.
                                 </p>
+
                             </div>
                         </div>
 
@@ -109,7 +112,7 @@ export default function WhyChooseUs() {
                                 ring-6 md:ring-8 ring-cyan-400/60
                                 shadow-2xl shadow-cyan-500/30">
                                 <Image
-                                    src="/skillkit_about.webp"
+                                    src="/uiux(2).jpg"
                                     alt="Portfolio review and job placement"
                                     fill
                                     className="object-cover"
@@ -117,11 +120,12 @@ export default function WhyChooseUs() {
                             </div>
                             <div className="max-w-sm">
                                 <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4">
-                                    Career Support & Placement
+                                    Practical Training by Industry Experts
                                 </h3>
                                 <p className="text-gray-300 text-base sm:text-lg">
-                                    We help you build a professional portfolio, polish your resume, and prepare for interviews.
+                                    Get hands-on practice guided by professionals, build real projects, and prepare yourself for freelance work, jobs, and client projects.
                                 </p>
+
                             </div>
                         </div>
                     </div>

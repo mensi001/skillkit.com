@@ -13,6 +13,7 @@ import VideoEditing from '../components/VideoEditing';
 import Architecture from '../components/Architecture';
 import ContentAbout from '../components/ContentAbout';
 import Component2 from '../components/Component2';
+import CoursesShowcase from '../components/coursesshowcase';
 
 export default function Home() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -33,6 +34,7 @@ export default function Home() {
                     <Hero />
                     <ContentAbout />
                     <Component2 />
+                    <CoursesShowcase />
                     <About />
                     <ContactUs />
                 </>
@@ -52,7 +54,7 @@ export default function Home() {
                 </>
             )}
 
-            <Contact isSidebarOpen={isSidebarOpen} />
+            {/* <Contact isSidebarOpen={isSidebarOpen} /> */}
         </main>
     );
 
