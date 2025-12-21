@@ -44,8 +44,8 @@ export default function Home() {
                     <section id="courses" className="pt-32 space-y-20">
                         <UiUx />
                         <Photoshop />
-                        <VideoEditing />
                         <Architecture />
+                        <VideoEditing />
                     </section>
 
                     <ContactUs />
