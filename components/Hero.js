@@ -86,6 +86,7 @@ export default function Hero() {
         ))}
       </div>
 
+
       {/* 3. NAVIGATION INDICATORS (DASHES INSTEAD OF DOTS) */}
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4">
         {slides.map((_, i) => (

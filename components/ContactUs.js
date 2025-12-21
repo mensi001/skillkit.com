@@ -89,13 +89,13 @@ export default function ContactUs() {
 
                             {success && (
                                 <div className="mb-5 rounded-md border border-green-500/30 bg-green-500/10 px-4 py-2 text-green-400 text-sm">
-                                    ✅ Message sent successfully!
+                                    Message sent successfully!
                                 </div>
                             )}
 
                             {error && (
                                 <div className="mb-5 rounded-md border border-red-500/30 bg-red-500/10 px-4 py-2 text-red-400 text-sm">
-                                    ❌ {error}
+                                    {error}
                                 </div>
                             )}
 

@@ -91,4 +91,5 @@ export default function HeroAbout() {
             </div>
         </section>
     );
+
 }

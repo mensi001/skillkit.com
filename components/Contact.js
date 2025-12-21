@@ -43,7 +43,7 @@ export default function ContactFooter({ isSidebarOpen = false }) {
                             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
                             <ul className="space-y-2 text-sm text-gray-400">
                                 {[
-                                    'Who We Are',
+                                    'Who We Are ',
                                     'Campus Tour',
                                     'Student Work',
                                     'Our Blog',
@@ -163,3 +163,4 @@ export default function ContactFooter({ isSidebarOpen = false }) {
         </section >
     );
 }
+
