@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from "react";
 
 export default function Hero() {
@@ -29,56 +31,58 @@ export default function Hero() {
       setIndex((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, [slides.length]);
+  }, []);
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-[#030712] flex items-center">
+    <section className="relative min-h-[100svh] w-full overflow-hidden bg-[#030712] flex items-center">
 
-      {/* 1. FUTURISTIC BACKGROUND ELEMENTS */}
+      {/* ================= BACKGROUND ================= */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Animated Glow Blobs */}
-        <div className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-purple-600/20 blur-[120px] rounded-full animate-pulse" />
-        <div className="absolute -bottom-[10%] -right-[10%] w-[50%] h-[50%] bg-blue-600/20 blur-[120px] rounded-full animate-pulse delay-700" />
-        {/* Grid Overlay */}
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150" />
+        <div className="absolute -top-24 -left-24 w-[300px] h-[300px] md:w-[50%] md:h-[50%] bg-purple-600/20 blur-[100px] rounded-full animate-pulse" />
+        <div className="absolute -bottom-24 -right-24 w-[300px] h-[300px] md:w-[50%] md:h-[50%] bg-blue-600/20 blur-[100px] rounded-full animate-pulse delay-700" />
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
       </div>
 
-      {/* 2. SLIDER CONTENT */}
+      {/* ================= SLIDER ================= */}
       <div
-        className="flex transition-transform duration-1000 cubic-bezier(0.4, 0, 0.2, 1)"
+        className="flex transition-transform duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)] w-full"
         style={{ transform: `translateX(-${index * 100}%)` }}
       >
         {slides.map((slide, i) => (
-          <div key={i} className="min-w-full px-6 flex flex-col items-center justify-center text-center">
+          <div
+            key={i}
+            className="min-w-full px-4 sm:px-6 md:px-12 flex flex-col items-center justify-center text-center"
+          >
 
             {/* Badge */}
-            <div className="mb-6 px-4 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs font-medium tracking-widest uppercase text-blue-400">
+            <div className="mb-4 md:mb-6 px-4 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-[10px] md:text-xs tracking-widest uppercase text-blue-400">
               {slide.badge}
             </div>
 
-            {/* Main Heading */}
-            <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.1] max-w-5xl mb-8">
-              {slide.title} <br />
+            {/* Heading */}
+            <h1 className="text-[2.2rem] sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight max-w-4xl mb-6">
+              {slide.title}
+              <br />
               <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 {slide.highlight}
               </span>
             </h1>
 
             {/* Description */}
-            <p className="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed mb-12">
+            <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed mb-8">
               {slide.desc}
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-5">
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#contact"
-                className="px-10 py-4 bg-white text-black font-bold rounded-xl hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+                className="px-8 py-3 md:px-10 md:py-4 bg-white text-black font-bold rounded-xl hover:scale-105 transition-all shadow-lg"
               >
                 Enroll Now
               </a>
 
-              <button className="px-10 py-4 bg-white/5 border border-white/10 text-white font-bold rounded-xl backdrop-blur-md hover:bg-white/10 transition-all">
+              <button className="px-8 py-3 md:px-10 md:py-4 bg-white/5 border border-white/10 text-white font-bold rounded-xl backdrop-blur-md hover:bg-white/10 transition-all">
                 View Curriculum
               </button>
             </div>
@@ -86,21 +90,20 @@ export default function Hero() {
         ))}
       </div>
 
-
-      {/* 3. NAVIGATION INDICATORS (DASHES INSTEAD OF DOTS) */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4">
+      {/* ================= INDICATORS ================= */}
+      <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 flex gap-3">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => setIndex(i)}
-            className={`transition-all duration-500 h-1.5 rounded-full ${index === i ? "w-12 bg-blue-500" : "w-6 bg-white/20"
+            className={`h-1.5 rounded-full transition-all ${index === i ? "w-10 bg-blue-500" : "w-5 bg-white/30"
               }`}
           />
         ))}
       </div>
 
-      {/* 4. DECORATIVE SIDE TEXT */}
-      <div className="hidden lg:block absolute left-10 top-1/2 -rotate-90 origin-left text-[10px] tracking-[0.5em] uppercase text-white/30 font-light">
+      {/* Side Text */}
+      <div className="hidden lg:block absolute left-10 top-1/2 -rotate-90 text-[10px] tracking-[0.5em] uppercase text-white/30">
         Creative Intelligence Agency // 2024
       </div>
     </section>
