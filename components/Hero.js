@@ -82,9 +82,9 @@ export default function Hero() {
                 Enroll Now
               </a>
 
-              <button className="px-8 py-3 md:px-10 md:py-4 bg-white/5 border border-white/10 text-white font-bold rounded-xl backdrop-blur-md hover:bg-white/10 transition-all">
+              {/* <button className="px-8 py-3 md:px-10 md:py-4 bg-white/5 border border-white/10 text-white font-bold rounded-xl backdrop-blur-md hover:bg-white/10 transition-all">
                 View Curriculum
-              </button>
+              </button> */}
             </div>
           </div>
         ))}
@@ -104,7 +104,6 @@ export default function Hero() {
 
       {/* Side Text */}
       <div className="hidden lg:block absolute left-10 top-1/2 -rotate-90 text-[10px] tracking-[0.5em] uppercase text-white/30">
-        Creative Intelligence Agency
       </div>
     </section>
   );

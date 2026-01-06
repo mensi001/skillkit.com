@@ -1,6 +1,17 @@
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
 
 export default function LetsTalkButton() {
+    const router = useRouter();
+
+  const handleClick = async () => {
+    router.push('/#contact');
+
+    setTimeout(() => {
+      const el = document.getElementById('contact');
+      el?.scrollIntoView({ behavior: 'smooth' });
+    }, 300);
+  };
     return (
         <Link
             href="#contact"
@@ -42,7 +53,7 @@ export default function LetsTalkButton() {
         "
             />
 
-            {/* Smile icon */}
+            {/* Smile icon */}  
             <span
                 className="
           relative z-10
@@ -55,7 +66,7 @@ export default function LetsTalkButton() {
                 😄
             </span>
 
-            <span className="relative z-10 uppercase font-zize-[19px]">
+            <span className="relative z-10 uppercase font-zize-[19px]" onClick={handleClick}>
                 Let’s Talk
             </span>
         </Link>

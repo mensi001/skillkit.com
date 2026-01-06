@@ -1,9 +1,11 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import Image from "next/image";
-import { CheckCircle2, Cpu, Layout, Users, Zap, PenTool } from "lucide-react"; // Install lucide-react or use SVGs
+import { CheckCircle2, Cpu, Layout, Users, Zap, PenTool } from "lucide-react";
 
 export default function UiUxIntro() {
+  const router = useRouter();
   const learningPoints = [
     { icon: <Layout className="w-5 h-5 text-cyan-400" />, text: "UI/UX Fundamentals & Design Thinking" },
     { icon: <Users className="w-5 h-5 text-purple-400" />, text: "User Research & Usability Testing" },
@@ -113,6 +115,21 @@ export default function UiUxIntro() {
                   </span>
                 ))}
               </div>
+            </div>
+
+            {/* Let's Talk Button */}
+            <div className="mt-8">
+              <button
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="w-full md:w-auto px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
+              >
+                Let's Talk
+              </button>
             </div>
 
           </div>

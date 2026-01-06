@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import {
   Building2,
@@ -11,6 +12,7 @@ import {
 } from "lucide-react";
 
 export default function ArchitectureIntro() {
+  const router = useRouter();
   const learningPoints = [
     { icon: <Building2 className="w-5 h-5 text-amber-400" />, text: "Architectural Design Fundamentals" },
     { icon: <Ruler className="w-5 h-5 text-orange-400" />, text: "Planning, Layouts & Space Design" },
@@ -145,6 +147,23 @@ export default function ArchitectureIntro() {
                   </span>
                 ))}
               </div>
+            </div>
+
+            {/* Let's Talk Button */}
+            <div className="mt-8">
+              <button
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="w-full md:w-auto px-8 py-3 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold hover:from-amber-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105"
+              >
+                Let's Talk
+              </button>
+
+
             </div>
 
           </div>

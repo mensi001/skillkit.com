@@ -89,8 +89,14 @@ export default function ContactFooter({ isSidebarOpen = false }) {
                                 </li>
                                 <li>
                                     <span className="block text-white">Phone</span>
-                                    +91 91040 77683
-                                    +91 76008 44123
+
+                                    <span className="block">
+                                        Jigar Patel : +91 91040 77683
+                                    </span>
+
+                                    <span className="block">
+                                        Niket Patel : +91 76008 44123
+                                    </span>
                                 </li>
                                 <li>
                                     <span className="block text-white">Address</span>

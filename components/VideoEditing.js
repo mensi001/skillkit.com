@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import {
   Film,
@@ -11,6 +12,7 @@ import {
 } from "lucide-react";
 
 export default function VideoEditingIntro() {
+  const router = useRouter();
   const learningPoints = [
     { icon: <Film className="w-5 h-5 text-red-400" />, text: "Video Editing Fundamentals & Storytelling" },
     { icon: <Scissors className="w-5 h-5 text-orange-400" />, text: "Professional Cuts, Transitions & Timing" },
@@ -146,6 +148,21 @@ export default function VideoEditingIntro() {
                   </span>
                 ))}
               </div>
+            </div>
+
+            {/* Let's Talk Button */}
+            <div className="mt-8">
+              <button
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="w-full md:w-auto px-8 py-3 rounded-full bg-gradient-to-r from-red-500 to-pink-500 text-white font-semibold hover:from-red-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105"
+              >
+                Let's Talk
+              </button>
             </div>
 
           </div>

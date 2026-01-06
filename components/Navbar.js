@@ -23,7 +23,7 @@ export default function Navbar({ isOpen, setIsOpen }) {
                             src="/lOGO_new.png"
                             alt="Skill Kit"
                             fill
-                            className="object-contain"
+                            className="object-contain bg-white"
                         />
                     </div>
                 </button>

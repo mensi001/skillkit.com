@@ -5,26 +5,26 @@ import { useRouter } from "next/navigation";
 
 const courses = [
     {
-        title: "UI/UX Design Mastery",
-        image: "/uiux(2).jpg",
+        title: "UI/UX Design Mastery + AI",
+        image: "/C.jpeg",
         rotate: "lg:-rotate-6",
         url: "/uiux",
     },
     {
-        title: "Video Editing Pro",
-        image: "/video.webp",
+        title: "Video Editing Pro + AI",
+        image: "/A.jpeg",
         rotate: "lg:rotate-0",
         url: "/video-editing",
     },
     {
-        title: "Graphics Design",
-        image: "/photoshop-ai.webp",
+        title: "Graphics Design + AI",
+        image: "/B.jpeg",
         rotate: "lg:rotate-6",
         url: "/photoshop",
     },
     {
-        title: "Creative Career Program",
-        image: "/career.webp",
+        title: "Architecture & Autocad + AI",
+        image: "/class.jpeg",
         rotate: "lg:rotate-12",
         url: "/architecture",
     },
