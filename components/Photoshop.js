@@ -65,7 +65,7 @@ export default function LatestCourse() {
             <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#0a0c14] p-3">
               <div className="rounded-[1.5rem] overflow-hidden">
                 <Image
-                  src="/uiux.jpg"
+                  src="/B.jpeg"
                   alt="Photoshop AI Training"
                   width={800}
                   height={600}

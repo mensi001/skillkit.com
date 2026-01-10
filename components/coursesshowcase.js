@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 const courses = [
     {
         title: "UI/UX Design Mastery + AI",
-        image: "/C.jpeg",
+        image: "/uiux_final.png",
         rotate: "lg:-rotate-6",
         url: "/uiux",
     },
@@ -17,16 +17,16 @@ const courses = [
         url: "/video-editing",
     },
     {
-        title: "Graphics Design + AI",
-        image: "/B.jpeg",
-        rotate: "lg:rotate-6",
-        url: "/photoshop",
-    },
-    {
         title: "Architecture & Autocad + AI",
         image: "/class.jpeg",
         rotate: "lg:rotate-12",
         url: "/architecture",
+    },
+    {
+        title: "Graphics Design + AI",
+        image: "/B.jpeg",
+        rotate: "lg:rotate-6",
+        url: "/photoshop",
     },
 ];
 

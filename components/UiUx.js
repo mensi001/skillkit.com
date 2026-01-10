@@ -58,7 +58,7 @@ export default function UiUxIntro() {
             <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#0a0c14] p-3">
               <div className="rounded-[1.5rem] overflow-hidden">
                 <Image
-                  src="/uiux.jpg" // Ensure this image is high quality
+                  src="/uiux_final.png" // Ensure this image is high quality
                   alt="UI UX Design Training"
                   width={800}
                   height={600}
