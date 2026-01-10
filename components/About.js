@@ -30,7 +30,7 @@ export default function AboutCreative() {
                             <div className="p-6 rounded-xl">
                                 <h4 className="text-lg font-semibold text-white mb-2">Continuous Feedback & Improvement</h4>
                                 <p className="text-sm text-gray-300">
-                                    We build strong foundations with practical tools in design, animation, and digital art.
+                                    We build strong foundations with practical tools in design, animation.
                                 </p>
                             </div>
                         </div>
