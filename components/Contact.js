@@ -63,16 +63,10 @@ export default function ContactFooter({ isSidebarOpen = false }) {
                             <h4 className="text-lg font-semibold mb-4">Our Courses</h4>
                             <ul className="space-y-2 text-sm text-gray-400">
                                 {[
-                                    'Advanced VFX Master Suite',
-                                    '3D Game Design Suite',
-                                    'Film Editing + Compositing Suite',
-                                    'Content Creator Suite',
-                                    'Motion Graphics Suite',
-                                    'Multimedia Master Suite',
-                                    'Photo & Video Editing Suite',
-                                    'Graphics Design Suite',
-                                    'Architectural Visualisation Suite',
-                                    'UI/UX Design Suite',
+                                    'Graphic Design + Ai',
+                                    'Ui/Ux Design + Ai',
+                                    'Video Editing + Ai',
+                                    'Ai Tools'
                                 ].map((course) => (
                                     <li key={course}>{course}</li>
                                 ))}

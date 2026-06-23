@@ -59,7 +59,7 @@ export default function ContactUs() {
                 <div className="rounded-2xl overflow-hidden border border-white/10">
                     <iframe
                         title="Google Map - Rajkot"
-                        src="https://www.google.com/maps?q=612%20Westgate%202,%20near%20Ayodhya%20chowk,%20150%20Feet%20Ring%20Rd,%20Rajkot,%20Gujarat%20360006&z=16&output=embed"
+                        src="https://www.google.com/maps?q=304,Jyoti+complex,Mavdi+Main+Road,Sri+nath+society,Uday+Nagar,Rajkot,Gujarat+360004&z=16&output=embed"
                         className="h-[260px] sm:h-[320px] md:h-[520px] w-full grayscale contrast-125 brightness-75"
                         loading="lazy"
                     />

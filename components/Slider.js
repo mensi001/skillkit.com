@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 const slides = [
   {
-    title: "First time in Offline and online beaches in Rajkot",
+    title: "First time in Rajkot - Offline and Online Batches",
     desc: "Skill-based education designed for real-world success."
   },
   {
