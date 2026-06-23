@@ -8,8 +8,8 @@ export default function Hero() {
   const slides = [
     {
       badge: "Tech Revolution",
-      title: "First time in Offline and online",
-      highlight: "beaches in Rajkot.",
+      title: "First time in Rajkot",
+      highlight: "Offline and Online Batches.",
       desc: "We don't just teach software; we engineer creators. Become a designer who leads the AI era, not just someone who uses it."
     },
     {
